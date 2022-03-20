@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+  table-layout: fixed;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* REMOVE CALENDAR AND TIME ICON */
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;}
+
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;}
+
+/* TOP HEADING SECTION */
+
+.top-page {
+  border: 1pt solid black;
+  background-color: maroon;
+}
+
+.top-page h1 {
+  height: 100%;
+  width: 100%;
+  background-color: maroon;
+  color: white;
+  margin: none;
+  padding: none;
+}
+
+.top-page p {
+  height: 100%;
+  width: 100%;
+  background-color: maroon;
+  color: white;
+  margin: none;
+  padding: none;
+}
+
+/* SALARY DETAILS SECTION */
+
+.salary-details {
+  border: 2pt solid black;
+  width: 100%;
+}
+
+.salary-details table {
+  width: 100%;
+  border: 1pt solid black;
+  border-collapse: collapse;
+}
+
+.salary-details caption {
+  font-weight: 900;
+  font-size: 1.5em;
+  background-color: maroon;
+  color: white;
+}
+
+.salary-details th {
+  width: 100%;
+  border: 1pt solid black;
+  text-align: center;
+  background-color: rgba(128, 0, 0, 0.801);
+  color: white;
+}
+
+.salary-details td {
+  width: 100%;
+  border: 1pt solid black;
+}
+
+.salary-details input {
+  border: none;
+  font-weight: bold;
+  font-size: large;
+  width: 95%;
+  text-align: center;
+}
+
+
+/* TIMESHEET REGULAR WORKING DAY SECTION */
+
+.timesheet-regular {
+  border: 2pt solid black;
+  width: 100%;
+}
+
+.timesheet-regular table {
+  border: 1pt solid black;
+  border-collapse: collapse;
+  height: 100%;
+  margin: none;
+  padding: none;
+}
+
+.timesheet-regular caption {
+  font-weight: 900;
+  font-size: 1.5em;
+  background-color: maroon;
+  color: white;
+}
+
+.timesheet-regular th {
+  border: 1pt solid black;
+  text-align: center;
+  height: 100%;
+  margin: none;
+  padding: none;
+  background-color: rgba(128, 0, 0, 0.801);
+  color: white;
+  width: 7.14%;
+}
+
+.timesheet-regular td {
+  border: 1pt solid black;
+  height: 100%;
+  margin: none;
+  padding: none;
+}
+
+.timesheet-regular input {
+  border: none;
+  font-weight: bold;
+  font-size: 1em;
+  width: 100%;
+  margin: none;
+  padding: none;
+  text-align: center;
+}
+
+.timesheet-regular .button1 {
+  float: left;
+  width: 50%;
+  height: 100%;
+  margin: none;
+  padding: none;
+  text-align: center;
+  font-size: .5em;
+  background-color: rgba(128, 0, 0, 0.801);
+  color: white;
+}
+
+.timesheet-regular .button2 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: none;
+  padding: none;
+  text-align: center;
+  font-size: .5em;
+  background-color: rgba(128, 0, 0, 0.801);
+  color: white;
+}
+
+.timesheet-regular-totals table {
+  width: 100%;
+}
+
+.timesheet-regular-totals th {
+  border: 1pt solid black;
+  height: 100%;
+  margin: none;
+  padding: none;
+  width: 50%;
+}
+
+.timesheet-regular-totals td {
+  border: 1pt solid black;
+  height: 100%;
+  margin: none;
+  padding: none;
+  width: 7.14%;
+  text-align: center;
+}
+
+.timesheet-regular-totals input {
+  border: none;
+  font-weight: bold;
+  font-size: 1em;
+  width: 100%;
+  margin: none;
+  padding: none;
+  text-align: center;
+}
+
+/* TIMESHEET HOLIDAYS AND RESTDAYS SECTION */
+
+.timesheet-overtime {
+  border: 2pt solid black;
+  width: 100%;
+}
+
+.timesheet-overtime table {
+  border: 1pt solid black;
+  border-collapse: collapse;
+  height: 100%;
+  margin: none;
+  padding: none;
+}
+
+.timesheet-overtime caption {
+  font-weight: 900;
+  font-size: 1.5em;
+  background-color: maroon;
+  color: white;
+}
+
+.timesheet-overtime th {
+  border: 1pt solid black;
+  text-align: center;
+  height: 100%;
+  margin: none;
+  padding: none;
+  width: 7.69%;
+  background-color: rgba(128, 0, 0, 0.801);
+  color: white;
+}
+
+.timesheet-overtime td {
+  border: 1pt solid black;
+  height: 100%;
+  margin: none;
+  padding: none;
+}
+
+.timesheet-overtime input {
+  border: none;
+  font-weight: bold;
+  font-size: 1em;
+  width: 100%;
+  margin: none;
+  padding: none;
+  text-align: center;
+}
+
+/* SALARY DEDUCTIONS */
+
+.salary-deductions {
+  border: 2pt solid black;
+  width: 100%;
+}
+
+.salary-deductions table {
+  border: 1pt solid black;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  margin: none;
+  padding: none;
+}
+
+.salary-deductions caption {
+  font-weight: 900;
+  font-size: 1.5em;
+  background-color: maroon;
+  color: white;
+}
+
+.salary-deductions th {
+  border: 1pt solid black;
+  text-align: center;
+  height: 100%;
+  margin: none;
+  padding: none;
+  background-color: rgba(128, 0, 0, 0.801);
+  color: white;
+  width: 11.11%;
+}
+
+.salary-deductions td {
+  border: 1pt solid black;
+  margin: none;
+  padding: none;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+
+.salary-deductions input {
+  text-align: center;
+  margin: none;
+  padding: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  width: 100%;
+  border: none;
+}
+
+.salary-deductions label {
+  height: 100%;
+  margin: none;
+  padding: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  width: 100%;
+}
+
+
+/* NET SALARY SECTION */
+
+.net-salary {
+  border: 2pt solid black;
+  width: 100%;
+}
+
+.net-salary table {
+  border: 1pt solid black;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  margin: none;
+  padding: none;
+}
+
+.net-salary caption {
+  font-weight: 900;
+  font-size: 1.5em;
+  background-color: maroon;
+  color: white;
+}
+
+.net-salary th {
+  border: 1pt solid black;
+  text-align: center;
+  height: 100%;
+  margin: none;
+  padding: none;
+  background-color: rgba(128, 0, 0, 0.801);
+  color: white;
+  width: 25%;
+}
+
+.net-salary td {
+  border: 1pt solid black;
+  height: 100%;
+  margin: none;
+  padding: none;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+
+.net-salary input {
+  text-align: center;
+  height: 100%;
+  margin: none;
+  padding: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  width: 100%;
+  border: none;
+}
+
+.button0 {
+  width: 100%;
+  font-size: 2em;
+  height: 50px;
+  font-weight: 900;
+  padding: auto;
+  margin: auto;
+  background-color: maroon;
+  color: white;
+}
