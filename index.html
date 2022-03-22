@@ -34,7 +34,11 @@
         </thead>
         <tbody>
           <tr>
-            <td><input step="any" type="number" id="workingdays" value="" placeholder="261 or 262 for leap year" min="0" required></td>
+            <td><input step="any" type="number" id="workingdays" value="" placeholder="Select option" min="0" list="workingdays-option" required></td>
+            <datalist id="workingdays-option">
+              <option value="261">Non-Leap Year</option>
+              <option value="262">Leap Year</option>
+            </datalist>
             <td><input step="any" type="number" id="allowances" value="" placeholder="Enter amount" min="0" required></td>
             <td><input step="any" type="number" id="monthly" placeholder="Enter amount" value="" min="0" required></td>
             <td><input tabindex="-1" step="any" type="number" id="daily" value="0.00" min="0" readonly></td>
@@ -323,7 +327,7 @@
         <tbody>
           <tr>
             <td><input step="any" value="" name="otDate" type="date" id="otDate1" min="0"></td>
-            <td><input step="any" value="0.00" name="otRate" type="number" id="otRate1" min="0"></td>
+            <td><input step="any" value="" name="otRate" type="number" id="otRate1" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
             <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA1" min="0"></td>
             <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA1" min="0"></td>
             <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB1" min="0"></td>
@@ -338,7 +342,7 @@
           </tr>
           <tr>
             <td><input step="any" value="" name="otDate" type="date" id="otDate2" min="0"></td>
-            <td><input step="any" value="0.00" name="otRate" type="number" id="otRate2" min="0"></td>
+            <td><input step="any" value="" name="otRate" type="number" id="otRate2" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
             <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA2" min="0"></td>
             <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA2" min="0"></td>
             <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB2" min="0"></td>
@@ -353,7 +357,7 @@
           </tr>
           <tr>
             <td><input step="any" value="" name="otDate" type="date" id="otDate3" min="0"></td>
-            <td><input step="any" value="0.00" name="otRate" type="number" id="otRate3" min="0"></td>
+            <td><input step="any" value="" name="otRate" type="number" id="otRate3" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
             <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA3" min="0"></td>
             <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA3" min="0"></td>
             <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB3" min="0"></td>
@@ -368,7 +372,7 @@
           </tr>
           <tr>
             <td><input step="any" value="" name="otDate" type="date" id="otDate4" min="0"></td>
-            <td><input step="any" value="0.00" name="otRate" type="number" id="otRate4" min="0"></td>
+            <td><input step="any" value="" name="otRate" type="number" id="otRate4" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
             <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA4" min="0"></td>
             <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA4" min="0"></td>
             <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB4" min="0"></td>
@@ -383,7 +387,7 @@
           </tr>
           <tr>
             <td><input step="any" value="" name="otDate" type="date" id="otDate5" min="0"></td>
-            <td><input step="any" value="0.00" name="otRate" type="number" id="otRate5" min="0"></td>
+            <td><input step="any" value="" name="otRate" type="number" id="otRate5" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
             <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA5" min="0"></td>
             <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA5" min="0"></td>
             <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB5" min="0"></td>
@@ -404,8 +408,17 @@
             <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="otTotalNsdPayA"></td>
             <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="otTotalNsdPayB"></td>
             <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="otTotalPay"></td>
-
           </tr>
+          <tr>
+            <td colspan="13" class="rate-guide">OVERTIME RATES GUIDE: Rest Day = 1.3 | Regular Holiday = 1.00 | Regular Holiday & Rest Day = 2.6 | Special Holiday = 0.30 | Special Holiday & Rest Day = 1.50</td>
+          </tr>
+          <datalist id="overtime-rates">
+            <option value="1.30">Rest Day</option>
+            <option value="1.00">Regular Holiday</option>
+            <option value="2.60">Regular Holiday & Rest Day</option>
+            <option value="0.30">Special Holiday</option>
+            <option value="1.50">Special Holiday and Rest Day</option>
+          </datalist>
         </tbody>
       </table>
     </section>

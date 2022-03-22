@@ -247,6 +247,17 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   text-align: center;
 }
 
+.timesheet-overtime .rate-guide {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.timesheet-overtime input::-webkit-input-placeholder {
+  font-size: .5em;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* SALARY DEDUCTIONS */
 
 .salary-deductions {
