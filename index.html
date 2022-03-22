@@ -34,7 +34,7 @@
         <tbody>
           <tr>
             <td><input step="any" type="number" id="workingdays" placeholder="261 or 262 for leap year" min="0" required></td>
-            <td><input step="any" type="number" id="allowances" placeholder="0" min="0"></td>
+            <td><input step="any" type="number" id="allowances" placeholder="0" min="0" required></td>
             <td><input step="any" type="number" id="monthly" placeholder="0" min="0" required></td>
             <td><input tabindex="-1" step="any" type="number" id="daily" value="0.00" min="0" readonly></td>
             <td><input tabindex="-1" step="any" type="number" id="hourly" value="0.00" min="0" readonly></td>
@@ -425,7 +425,7 @@
         </thead>
         <tbody>
           <tr>
-            <td rowspan="2"><input step="any" type="number" id="absences" value="" min="0" placeholder="LWOPs only"></td>
+            <td rowspan="2"><input required step="any" type="number" id="absences" value="" min="0" placeholder="LWOPs only"></td>
             <td rowspan="2"><input required step="any" type="number" id="btaxDeductions" value="" min="0" placeholder="enter amount"></td>
             <td rowspan="2"><input required step="any" type="number" id="ataxdeductions" value="" min="0" placeholder="enter amount"></td>
             <td rowspan="2"><input tabindex="-1" step="any" type="number" id="totalLateHoursDeductions" value="0.00" min="0" readonly></td>
