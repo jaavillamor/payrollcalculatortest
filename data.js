@@ -5,6 +5,7 @@ function callAll() {
     // ===== SALARY DETAILS ===== //
 
     var monthly = document.getElementById('monthly').value;
+    var allowances = document.getElementById('allowances').value;
 
     if (monthly == "" || monthly == 0) {
         var monthly = 0;
@@ -375,7 +376,7 @@ function callAll() {
     console.log('ataxdeductions= '.concat(ataxdeductions));
 
     //get net income = gross income - tax - after tax deductions
-    var NetIncome = parseFloat(taxableIncome) - parseFloat(TaxAmount) - parseFloat(ataxdeductions);
+    var NetIncome = parseFloat(taxableIncome) - parseFloat(TaxAmount) - parseFloat(ataxdeductions) + parseFloat(allowances);
     document.getElementById('netincome').value = NetIncome.toFixed(2);
     console.log('NetIncome= '.concat(NetIncome));
 
