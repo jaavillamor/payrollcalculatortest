@@ -6,8 +6,11 @@ function callAll() {
 
     var monthly = document.getElementById('monthly').value;
     var allowances = document.getElementById('allowances').value;
+    var workingdays = document.getElementById('workingdays').value;
 
-    if (monthly == "" || monthly == 0) {
+    if (monthly == "" || monthly == 0 || allowances == "" || workingdays == "") {
+        var allowances = 0;
+        var workingdays = 0;
         var monthly = 0;
         var daily = 0;
         var hourly = 0;
@@ -18,7 +21,7 @@ function callAll() {
         console.log('minute= '.concat(minute));
     }
     else {
-        var daily = (monthly * 12) / document.getElementById('workingdays').value;
+        var daily = (monthly * 12) / workingdays;
         var hourly = daily / 8;
         var minute = hourly / 60;
         console.log('monthly= '.concat(monthly));
@@ -328,56 +331,62 @@ function callAll() {
     document.getElementById('sss').value = sss.toFixed(2);
     console.log('sss= '.concat(sss));
 
-    // calculate the HDMF premium
-    var hdmfchecker = (document.getElementById('hdmf.checkbox').checked) ? 0 : 1;
-    var hdmf = Math.min(100, document.getElementById('monthly').value * 0.01 * hdmfchecker);
-    document.getElementById('hdmf').value = hdmf.toFixed(2);
-    console.log('hdmf= '.concat(hdmf));
 
-    //get total premiums
-    var govtPremiums = parseFloat(philhealth) + parseFloat(sss) + parseFloat(hdmf);
-    console.log('govtPremiums= '.concat(govtPremiums));
+    if (monthly == "" || monthly == 0 || allowances == "" || workingdays == "") {
+        var hdmf = 0.00;
+    } else
+        {
+            // calculate the HDMF premium
+            var hdmfchecker = (document.getElementById('hdmf.checkbox').checked) ? 0 : 1;
+            var hdmf = Math.min(100, document.getElementById('monthly').value * 0.01 * hdmfchecker);
+            document.getElementById('hdmf').value = hdmf.toFixed(2);
+            console.log('hdmf= '.concat(hdmf));
+        }
+
+        //get total premiums
+        var govtPremiums = parseFloat(philhealth) + parseFloat(sss) + parseFloat(hdmf);
+        console.log('govtPremiums= '.concat(govtPremiums));
 
 
-    // ====== NET SALARY ===== //
+        // ====== NET SALARY ===== //
 
 
-    //get total overtime pay = ot pay on regular working day + ot pay on first 8 hours + ot pay on excess hours
-    var totalOvertimePay = regTotalOtPay + otTotalOtPayA + otTotalOtPayB;
-    console.log('totalOvertimePay= '.concat(totalOvertimePay));
+        //get total overtime pay = ot pay on regular working day + ot pay on first 8 hours + ot pay on excess hours
+        var totalOvertimePay = regTotalOtPay + otTotalOtPayA + otTotalOtPayB;
+        console.log('totalOvertimePay= '.concat(totalOvertimePay));
 
-    //get total nsd pay
-    var totalNsdPay = regTotalNsdRegPay + regTotalNsdOtPay + otTotalNsdPayA + otTotalNsdPayB;
-    console.log('totalNsdPay= '.concat(totalNsdPay));
+        //get total nsd pay
+        var totalNsdPay = regTotalNsdRegPay + regTotalNsdOtPay + otTotalNsdPayA + otTotalNsdPayB;
+        console.log('totalNsdPay= '.concat(totalNsdPay));
 
-    //get gross income = half of monthly rate + total overtime pay + total nsd pay
-    var grossIncome = (monthly * .5) + parseFloat(totalOvertimePay) + parseFloat(totalNsdPay);
-    document.getElementById('grossincome').value = grossIncome.toFixed(2);
-    console.log('grossIncome= '.concat(grossIncome));
+        //get gross income = half of monthly rate + total overtime pay + total nsd pay
+        var grossIncome = (monthly * .5) + parseFloat(totalOvertimePay) + parseFloat(totalNsdPay);
+        document.getElementById('grossincome').value = grossIncome.toFixed(2);
+        console.log('grossIncome= '.concat(grossIncome));
 
-    // get the manually added before tax deductions
-    var btaxDeductions = document.getElementById('btaxDeductions').value;
-    var btaxDeductions = (btaxDeductions === '' || btaxDeductions === 0) ? 0 : btaxDeductions;
-    console.log('btaxDeductions= '.concat(btaxDeductions));
+        // get the manually added before tax deductions
+        var btaxDeductions = document.getElementById('btaxDeductions').value;
+        var btaxDeductions = (btaxDeductions === '' || btaxDeductions === 0) ? 0 : btaxDeductions;
+        console.log('btaxDeductions= '.concat(btaxDeductions));
 
-    //get taxable income = gross income - before tax deductions - premiums - undertime/late - absences
-    var taxableIncome = parseFloat(grossIncome) - parseFloat(btaxDeductions) - parseFloat(govtPremiums) - parseFloat(totalLateHoursDeductions) - parseFloat(totalLeaveWOPay);
-    document.getElementById('nettaxableincome').value = taxableIncome.toFixed(2);
-    console.log('taxableIncome= '.concat(taxableIncome));
+        //get taxable income = gross income - before tax deductions - premiums - undertime/late - absences
+        var taxableIncome = parseFloat(grossIncome) - parseFloat(btaxDeductions) - parseFloat(govtPremiums) - parseFloat(totalLateHoursDeductions) - parseFloat(totalLeaveWOPay);
+        document.getElementById('nettaxableincome').value = taxableIncome.toFixed(2);
+        console.log('taxableIncome= '.concat(taxableIncome));
 
-    //get tax amount
-    var TaxAmount = getTaxAmount(taxableIncome);
-    document.getElementById('tax').value = TaxAmount.toFixed(2);
-    console.log('TaxAmount= '.concat(TaxAmount));
+        //get tax amount
+        var TaxAmount = getTaxAmount(taxableIncome);
+        document.getElementById('tax').value = TaxAmount.toFixed(2);
+        console.log('TaxAmount= '.concat(TaxAmount));
 
-    //get the after tax deductions
-    var ataxdeductions = document.getElementById('ataxdeductions').value;
-    var ataxdeductions = (ataxdeductions === '' || ataxdeductions === 0) ? 0 : ataxdeductions;
-    console.log('ataxdeductions= '.concat(ataxdeductions));
+        //get the after tax deductions
+        var ataxdeductions = document.getElementById('ataxdeductions').value;
+        var ataxdeductions = (ataxdeductions === '' || ataxdeductions === 0) ? 0 : ataxdeductions;
+        console.log('ataxdeductions= '.concat(ataxdeductions));
 
-    //get net income = gross income - tax - after tax deductions
-    var NetIncome = parseFloat(taxableIncome) - parseFloat(TaxAmount) - parseFloat(ataxdeductions) + parseFloat(allowances);
-    document.getElementById('netincome').value = NetIncome.toFixed(2);
-    console.log('NetIncome= '.concat(NetIncome));
+        //get net income = gross income - tax - after tax deductions
+        var NetIncome = parseFloat(taxableIncome) - parseFloat(TaxAmount) - parseFloat(ataxdeductions) + parseFloat(allowances);
+        document.getElementById('netincome').value = NetIncome.toFixed(2);
+        console.log('NetIncome= '.concat(NetIncome));
 
-}
+    }
