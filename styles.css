@@ -56,7 +56,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .salary-details caption {
   font-weight: 900;
-  font-size: 1.5em;
+  font-size: 2.25em;
   background-color: maroon;
   color: white;
 }
@@ -67,6 +67,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   text-align: center;
   background-color: rgba(128, 0, 0, 0.801);
   color: white;
+  font-size: 1.5em;
 }
 
 .salary-details td {
@@ -80,6 +81,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   font-size: large;
   width: 95%;
   text-align: center;
+  font-size: 1.5em;
+}
+
+.salary-details input::-webkit-input-placeholder {
+  font-size: .7em;
 }
 
 
@@ -100,7 +106,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .timesheet-regular caption {
   font-weight: 900;
-  font-size: 1.5em;
+  font-size: 2.25em;
   background-color: maroon;
   color: white;
 }
@@ -114,6 +120,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background-color: rgba(128, 0, 0, 0.801);
   color: white;
   width: 7.14%;
+  font-size: 1.5em;
 }
 
 .timesheet-regular td {
@@ -126,7 +133,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .timesheet-regular input {
   border: none;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.5em;
   width: 100%;
   margin: none;
   padding: none;
@@ -140,7 +147,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin: none;
   padding: none;
   text-align: center;
-  font-size: .5em;
+  font-size: .75em;
   background-color: rgba(128, 0, 0, 0.801);
   color: white;
 }
@@ -152,7 +159,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin: none;
   padding: none;
   text-align: center;
-  font-size: .5em;
+  font-size: .75em;
   background-color: rgba(128, 0, 0, 0.801);
   color: white;
 }
@@ -167,6 +174,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin: none;
   padding: none;
   width: 50%;
+  font-size: 1.5em;
 }
 
 .timesheet-regular-totals td {
@@ -181,7 +189,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .timesheet-regular-totals input {
   border: none;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.5em;
   width: 100%;
   margin: none;
   padding: none;
@@ -205,7 +213,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .timesheet-overtime caption {
   font-weight: 900;
-  font-size: 1.5em;
+  font-size: 2.25em;
   background-color: maroon;
   color: white;
 }
@@ -219,6 +227,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   width: 7.69%;
   background-color: rgba(128, 0, 0, 0.801);
   color: white;
+  font-size: 1.5em;
 }
 
 .timesheet-overtime td {
@@ -231,7 +240,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .timesheet-overtime input {
   border: none;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.5em;
   width: 100%;
   margin: none;
   padding: none;
@@ -256,7 +265,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .salary-deductions caption {
   font-weight: 900;
-  font-size: 1.5em;
+  font-size: 2.25em;
   background-color: maroon;
   color: white;
 }
@@ -270,6 +279,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background-color: rgba(128, 0, 0, 0.801);
   color: white;
   width: 11.11%;
+  font-size: 1.5em;
 }
 
 .salary-deductions td {
@@ -277,7 +287,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin: none;
   padding: none;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.5em;
   text-align: center;
 }
 
@@ -290,6 +300,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   font-size: 1em;
   width: 100%;
   border: none;
+}
+
+.salary-deductions input[type="checkbox"] {
+  width: 10%;
+}
+
+.salary-deductions input::-webkit-input-placeholder {
+  font-size: .7em;
 }
 
 .salary-deductions label {
@@ -321,7 +339,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .net-salary caption {
   font-weight: 900;
-  font-size: 1.5em;
+  font-size: 2.25em;
   background-color: maroon;
   color: white;
 }
@@ -335,6 +353,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background-color: rgba(128, 0, 0, 0.801);
   color: white;
   width: 25%;
+  font-size: 1.5em;
 }
 
 .net-salary td {
@@ -343,7 +362,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin: none;
   padding: none;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.5em;
   text-align: center;
 }
 
@@ -361,7 +380,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .button0 {
   width: 100%;
-  font-size: 2em;
+  font-size: 3em;
   height: 50px;
   font-weight: 900;
   padding: auto;
