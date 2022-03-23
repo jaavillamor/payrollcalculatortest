@@ -21,6 +21,11 @@
     <hr>
     <section class="salary-details">
       <table>
+        <div class="labels">
+          <label for="workingdays">Working Days</label>
+          <label for="allowances">Allowances</label>
+          <label for="monthly">Monthly</label>
+        </div>
         <caption>SALARY DETAILS</caption>
         <thead>
           <tr>
@@ -34,16 +39,16 @@
         </thead>
         <tbody>
           <tr>
-            <td><input step="any" type="number" id="workingdays" value="" placeholder="Select option" min="0" list="workingdays-option" required></td>
-            <datalist id="workingdays-option">
+            <td><input tabindex="-0" step="any" type="number" value="" list="workingdays-opt" required id="workingdays" placeholder="261 or 262 for leap year"></td>
+            <datalist id="workingdays-opt">
               <option value="261">Non-Leap Year</option>
               <option value="262">Leap Year</option>
             </datalist>
-            <td><input step="any" type="number" id="allowances" value="" placeholder="Enter amount" min="0" required></td>
-            <td><input step="any" type="number" id="monthly" placeholder="Enter amount" value="" min="0" required></td>
-            <td><input tabindex="-1" step="any" type="number" id="daily" value="0.00" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" type="number" id="hourly" value="0.00" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" type="number" id="minute" value="0.00" min="0" readonly></td>
+            <td><input tabindex="-0" step="any" type="number" value="" required id="allowances" placeholder="Enter amount"></td>
+            <td><input tabindex="-0" step="any" type="number" value="" required id="monthly" placeholder="Enter amount"></td>
+            <td><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="daily"></td>
+            <td><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="hourly"></td>
+            <td><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="minute"></td>
           </tr>
         </tbody>
       </table>
@@ -87,212 +92,207 @@
         </thead>
         <tbody>
           <tr>
-            <td><input required step="any" name="regday" value="" type="date" id="regday1"></td>
-            <td><input required step="any" name="regschedulein" value="" type="time" id="regschedulein1"></td>
-            <td><input required step="any" name="regscheduleout" value="" type="time" id="regscheduleout1"></td>
-            <td><input required step="any" name="reglogtimein" value="" type="time" id="reglogtimein1"></td>
-            <td><input required step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout1"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein1"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout1"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs1" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs1" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay1" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay1" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay1" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay1" readonly></td>
+            <td><input step="any" value="" type="date" name="regday" id="regday1"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein1"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout1"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein1"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout1"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein1"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay1"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('1')">Clear</button></td>
           <tr>
-          </tr>
-          <td><input step="any" name="regday" value="" type="date" id="regday2"></td>
-          <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein2"></td>
-          <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout2"></td>
-          <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein2"></td>
-          <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout2"></td>
-          <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein2"></td>
-          <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout2"></td>
-          <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs2" readonly></td>
-          <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs2" readonly></td>
-          <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay2" readonly></td>
-          <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay2" readonly></td>
-          <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay2" readonly>
-          </td>
-          <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay2"
-              readonly></td>
-          <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('2')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday3"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein3"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout3"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein3"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout3"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein3"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout3"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs3" readonly>
-            </td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs3" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay3" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay3" readonly>
-            </td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay3"
-                readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number"
-                id="regtotalnsdotpay3" readonly></td>
+            <td><input step="any" value="" type="date" name="regday" id="regday2"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein2"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout2"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein2"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout2"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein2"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay2"></td>
+            <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('2')">Clear</button></td>
+          <tr>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday3"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein3"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout3"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein3"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout3"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein3"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay3"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('3')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday4"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein4"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout4"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein4"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout4"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein4"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout4"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs4" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs4" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay4" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay4" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay4" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay4" readonly></td>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday4"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein4"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout4"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein4"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout4"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein4"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay4"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('4')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday5"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein5"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout5"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein5"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout5"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein5"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout5"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs5" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs5" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay5" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay5" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay5" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay5" readonly></td>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday5"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein5"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout5"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein5"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout5"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein5"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay5"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('5')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday6"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein6"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout6"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein6"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout6"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein6"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout6"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs6" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs6" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay6" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay6" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay6" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay6" readonly></td>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday6"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein6"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout6"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein6"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout6"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein6"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout6"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs6"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs6"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay6"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay6"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay6"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay6"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('6')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday7"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein7"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout7"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein7"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout7"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein7"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout7"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs7" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs7" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay7" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay7" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay7" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay7" readonly></td>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday7"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein7"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout7"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein7"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout7"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein7"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout7"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs7"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs7"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay7"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay7"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay7"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay7"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('7')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday8"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein8"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout8"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein8"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout8"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein8"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout8"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs8" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs8" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay8" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay8" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay8" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay8" readonly></td>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday8"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein8"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout8"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein8"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout8"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein8"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout8"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs8"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs8"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay8"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay8"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay8"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay8"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('8')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday9"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein9"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout9"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein9"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout9"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein9"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout9"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs9" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs9" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay9" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay9" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay9" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay9" readonly></td>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday9"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein9"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout9"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein9"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout9"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein9"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout9"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs9"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs9"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay9"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay9"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay9"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay9"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('9')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday10"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein10"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout10"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein10"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout10"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein10"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout10"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs10" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs10" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay10" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay10" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay10" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay10" readonly></td>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday10"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein10"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout10"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein10"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout10"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein10"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout10"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs10"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs10"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay10"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay10"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay10"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay10"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('10')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday11"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein11"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout11"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein11"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout11"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein11"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout11"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs11" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs11" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay11" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay11" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay11" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay11" readonly></td>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday11"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein11"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout11"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein11"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout11"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein11"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout11"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs11"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs11"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay11"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay11"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay11"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay11"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('11')">Clear</button></td>
-          </tr>
           <tr>
-            <td><input step="any" name="regday" value="" type="date" id="regday12"></td>
-            <td><input step="any" name="regschedulein" value="" type="time" id="regschedulein12"></td>
-            <td><input step="any" name="regscheduleout" value="" type="time" id="regscheduleout12"></td>
-            <td><input step="any" name="reglogtimein" value="" type="time" id="reglogtimein12"></td>
-            <td><input step="any" name="reglogtimeout" value="" type="time" id="reglogtimeout12"></td>
-            <td><input tabindex="-1" step="any" name="regovertimein" value="" type="time" id="regovertimein12"></td>
-            <td><input tabindex="-1" step="any" name="regovertimeout" value="" type="time" id="regovertimeout12"></td>
-            <td><input tabindex="-1" step="any" name="regreghrs" value="0.00" type="number" id="regreghrs12" readonly></td>
-            <td><input tabindex="-1" step="any" name="regothrs" value="0.00" type="number" id="regothrs12" readonly></td>
-            <td><input tabindex="-1" step="any" name="regotpay" value="0.00" type="number" id="regotpay12" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdpay" value="0.00" type="number" id="regnsdpay12" readonly></td>
-            <td><input tabindex="-1" step="any" name="regnsdotpay" value="0.00" type="number" id="regnsdotpay12" readonly></td>
-            <td><input tabindex="-1" step="any" name="regtotalnsdotpay" value="0.00" type="number" id="regtotalnsdotpay12" readonly></td>
+          <tr>
+            <td><input step="any" value="" type="date" name="regday" id="regday12"></td>
+            <td><input step="any" value="" type="time" name="regschedulein" id="regschedulein12"></td>
+            <td><input step="any" value="" type="time" name="regscheduleout" id="regscheduleout12"></td>
+            <td><input step="any" value="" type="time" name="reglogtimein" id="reglogtimein12"></td>
+            <td><input step="any" value="" type="time" name="reglogtimeout" id="reglogtimeout12"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimein" id="regovertimein12"></td>
+            <td><input tabindex="-1" step="any" value="" type="time" name="regovertimeout" id="regovertimeout12"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regreghrs" id="regreghrs12"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regothrs" id="regothrs12"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regotpay" id="regotpay12"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdpay" id="regnsdpay12"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regnsdotpay" id="regnsdotpay12"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="regtotalnsdotpay" id="regtotalnsdotpay12"></td>
             <td><button tabindex="-1" class="button2" type="button" onclick="clearinput('12')">Clear</button></td>
-          </tr>
+          <tr>
+            
           <tr>
             <th id="textTotal" colspan="7">TOTAL</th>
-            <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalWorkingHoursActual"></td>
-            <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalOtHours"></td>
-            <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalOtPay"></td>
-            <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalNsdRegPay"></td>
-            <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalNsdOtPay"></td>
-            <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalOvertimeNsdPay"></td>
-            <td></td>
+            <td><input class="readonly" disabled readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalWorkingHoursActual"></td>
+            <td><input class="readonly" disabled readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalOtHours"></td>
+            <td><input class="readonly" disabled readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalOtPay"></td>
+            <td><input class="readonly" disabled readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalNsdRegPay"></td>
+            <td><input class="readonly" disabled readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalNsdOtPay"></td>
+            <td><input class="readonly" disabled readonly step="any" tabindex="-1" value="0.00" type="number" id="regTotalOvertimeNsdPay"></td>
+            <th></th>
           </tr>
         </tbody>
       </table>
@@ -326,79 +326,79 @@
         </thead>
         <tbody>
           <tr>
-            <td><input step="any" value="" name="otDate" type="date" id="otDate1" min="0"></td>
-            <td><input step="any" value="" name="otRate" type="number" id="otRate1" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA1" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA1" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB1" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndB" type="time" id="otTimeEndB1" min="0"></td>
-            <td><input step="any" value="" name="otBreak" type="time" id="otBreak1" min="0"></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlHrs" type="number" id="otTtlHrs1" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayA" type="number" id="otOtPayA1" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayB" type="number" id="otOtPayB1" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayA" type="number" id="otNsdPayA1" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayB" type="number" id="otNsdPayB1" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlPay" type="number" id="otTtlPay1" min="0" readonly></td>
+            <td><input step="any" type="date" value="" name="otDate" id="otDate1"></td>
+            <td><input step="any" type="number" placeholder="Select rate" list="overtime-rates-opt" name="otRate" id="otRate1"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartA" id="otTimeStartA1"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndA" id="otTimeEndA1"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartB" id="otTimeStartB1"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndB" id="otTimeEndB1"></td>
+            <td><input step="any" type="time" value="" name="otBreak" id="otBreak1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlHrs" id="otTtlHrs1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayA" id="otOtPayA1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayB" id="otOtPayB1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayA" id="otNsdPayA1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayB" id="otNsdPayB1"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlPay" id="otTtlPay1"></td>
           </tr>
           <tr>
-            <td><input step="any" value="" name="otDate" type="date" id="otDate2" min="0"></td>
-            <td><input step="any" value="" name="otRate" type="number" id="otRate2" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA2" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA2" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB2" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndB" type="time" id="otTimeEndB2" min="0"></td>
-            <td><input step="any" value="" name="otBreak" type="time" id="otBreak2" min="0"></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlHrs" type="number" id="otTtlHrs2" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayA" type="number" id="otOtPayA2" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayB" type="number" id="otOtPayB2" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayA" type="number" id="otNsdPayA2" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayB" type="number" id="otNsdPayB2" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlPay" type="number" id="otTtlPay2" min="0" readonly></td>
+            <td><input step="any" type="date" value="" name="otDate" id="otDate2"></td>
+            <td><input step="any" type="number" placeholder="Select rate" list="overtime-rates-opt" name="otRate" id="otRate2"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartA" id="otTimeStartA2"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndA" id="otTimeEndA2"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartB" id="otTimeStartB2"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndB" id="otTimeEndB2"></td>
+            <td><input step="any" type="time" value="" name="otBreak" id="otBreak2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlHrs" id="otTtlHrs2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayA" id="otOtPayA2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayB" id="otOtPayB2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayA" id="otNsdPayA2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayB" id="otNsdPayB2"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlPay" id="otTtlPay2"></td>
           </tr>
           <tr>
-            <td><input step="any" value="" name="otDate" type="date" id="otDate3" min="0"></td>
-            <td><input step="any" value="" name="otRate" type="number" id="otRate3" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA3" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA3" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB3" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndB" type="time" id="otTimeEndB3" min="0"></td>
-            <td><input step="any" value="" name="otBreak" type="time" id="otBreak3" min="0"></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlHrs" type="number" id="otTtlHrs3" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayA" type="number" id="otOtPayA3" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayB" type="number" id="otOtPayB3" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayA" type="number" id="otNsdPayA3" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayB" type="number" id="otNsdPayB3" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlPay" type="number" id="otTtlPay3" min="0" readonly></td>
+            <td><input step="any" type="date" value="" name="otDate" id="otDate3"></td>
+            <td><input step="any" type="number" placeholder="Select rate" list="overtime-rates-opt" name="otRate" id="otRate3"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartA" id="otTimeStartA3"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndA" id="otTimeEndA3"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartB" id="otTimeStartB3"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndB" id="otTimeEndB3"></td>
+            <td><input step="any" type="time" value="" name="otBreak" id="otBreak3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlHrs" id="otTtlHrs3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayA" id="otOtPayA3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayB" id="otOtPayB3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayA" id="otNsdPayA3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayB" id="otNsdPayB3"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlPay" id="otTtlPay3"></td>
           </tr>
           <tr>
-            <td><input step="any" value="" name="otDate" type="date" id="otDate4" min="0"></td>
-            <td><input step="any" value="" name="otRate" type="number" id="otRate4" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA4" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA4" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB4" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndB" type="time" id="otTimeEndB4" min="0"></td>
-            <td><input step="any" value="" name="otBreak" type="time" id="otBreak4" min="0"></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlHrs" type="number" id="otTtlHrs4" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayA" type="number" id="otOtPayA4" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayB" type="number" id="otOtPayB4" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayA" type="number" id="otNsdPayA4" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayB" type="number" id="otNsdPayB4" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlPay" type="number" id="otTtlPay4" min="0" readonly></td>
+            <td><input step="any" type="date" value="" name="otDate" id="otDate4"></td>
+            <td><input step="any" type="number" placeholder="Select rate" list="overtime-rates-opt" name="otRate" id="otRate4"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartA" id="otTimeStartA4"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndA" id="otTimeEndA4"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartB" id="otTimeStartB4"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndB" id="otTimeEndB4"></td>
+            <td><input step="any" type="time" value="" name="otBreak" id="otBreak4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlHrs" id="otTtlHrs4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayA" id="otOtPayA4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayB" id="otOtPayB4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayA" id="otNsdPayA4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayB" id="otNsdPayB4"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlPay" id="otTtlPay4"></td>
           </tr>
           <tr>
-            <td><input step="any" value="" name="otDate" type="date" id="otDate5" min="0"></td>
-            <td><input step="any" value="" name="otRate" type="number" id="otRate5" list="overtime-rates" placeholder="Seleft rate" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartA" type="time" id="otTimeStartA5" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndA" type="time" id="otTimeEndA5" min="0"></td>
-            <td><input step="any" value="" name="otTimeStartB" type="time" id="otTimeStartB5" min="0"></td>
-            <td><input step="any" value="" name="otTimeEndB" type="time" id="otTimeEndB5" min="0"></td>
-            <td><input step="any" value="" name="otBreak" type="time" id="otBreak5" min="0"></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlHrs" type="number" id="otTtlHrs5" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayA" type="number" id="otOtPayA5" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otOtPayB" type="number" id="otOtPayB5" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayA" type="number" id="otNsdPayA5" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otNsdPayB" type="number" id="otNsdPayB5" min="0" readonly></td>
-            <td><input tabindex="-1" step="any" value="0.00" name="otTtlPay" type="number" id="otTtlPay5" min="0" readonly></td>
+            <td><input step="any" type="date" value="" name="otDate" id="otDate5"></td>
+            <td><input step="any" type="number" placeholder="Select rate" list="overtime-rates-opt" name="otRate" id="otRate5"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartA" id="otTimeStartA5"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndA" id="otTimeEndA5"></td>
+            <td><input step="any" type="time" value="" name="otTimeStartB" id="otTimeStartB5"></td>
+            <td><input step="any" type="time" value="" name="otTimeEndB" id="otTimeEndB5"></td>
+            <td><input step="any" type="time" value="" name="otBreak" id="otBreak5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlHrs" id="otTtlHrs5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayA" id="otOtPayA5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otOtPayB" id="otOtPayB5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayA" id="otNsdPayA5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otNsdPayB" id="otNsdPayB5"></td>
+            <td><input tabindex="-1" step="any" value="0.00" type="number" class="readonly" disabled readonly name="otTtlPay" id="otTtlPay5"></td>
           </tr>
           <tr>
             <th colspan="7">TOTAL</th>
@@ -409,22 +409,31 @@
             <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="otTotalNsdPayB"></td>
             <td><input readonly step="any" tabindex="-1" value="0.00" type="number" id="otTotalPay"></td>
           </tr>
-          <tr>
-            <td colspan="13" class="rate-guide">OVERTIME RATES GUIDE: Rest Day = 1.3 | Regular Holiday = 1.00 | Regular Holiday & Rest Day = 2.6 | Special Holiday = 0.30 | Special Holiday & Rest Day = 1.50</td>
-          </tr>
-          <datalist id="overtime-rates">
+          <datalist id="overtime-rates-opt">
             <option value="1.30">Rest Day</option>
             <option value="1.00">Regular Holiday</option>
             <option value="2.60">Regular Holiday & Rest Day</option>
             <option value="0.30">Special Holiday</option>
-            <option value="1.50">Special Holiday and Rest Day</option>
+            <option value="1.50">Special Holiday & Rest Day</option>
           </datalist>
+          <tr>
+            <td colspan="13">OVERTIME RATES GUIDE: Rest Day = 1.3 | Regular Holiday = 1.00 | Regular Holiday & Rest Day = 2.6 | Special Holiday = 0.30 | Special Holiday & Rest Day = 1.50</td>
+          </tr>
         </tbody>
       </table>
     </section>
     <hr>
     <section class="salary-deductions">
       <table>
+        <div class="labels">
+          <label for="absences">Absences</label>
+          <label for="btaxDeductions">Before Tax Deductions</label>
+          <label for="ataxdeductions">After Tax Deductions</label>
+          <label for="totalLateHoursDeductions">Late & Undertime</label>
+          <label for="sss">SSS</label>
+          <label for="philhealth">PhilHealth</label>
+          <label for="hdmf">HDMF</label>
+        </div>
         <caption>SALARY DEDUCTIONS</caption>
         <thead>
           <tr>
@@ -432,20 +441,20 @@
             <th>Before Tax Deductions</th>
             <th>After Tax Deductions</th>
             <th>Late & Undertime</th>
-            <th colspan="2">SSS Premiums</th>
-            <th colspan="2">PhilHealth Premiums</th>
-            <th colspan="2">HDMF Premiums</th>
+            <th colspan="2">SSS</th>
+            <th colspan="2">PhilHealth</th>
+            <th colspan="2">HDMF</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td rowspan="2"><input required step="any" type="number" id="absences" value="" min="0" placeholder="LWOPs only"></td>
-            <td rowspan="2"><input required step="any" type="number" id="btaxDeductions" value="" min="0" placeholder="Enter amount"></td>
-            <td rowspan="2"><input required step="any" type="number" id="ataxdeductions" value="" min="0" placeholder="Enter amount"></td>
-            <td rowspan="2"><input tabindex="-1" step="any" type="number" id="totalLateHoursDeductions" value="0.00" min="0" readonly></td>
-            <td colspan="2"><input tabindex="-1" step="any" type="number" id="sss" value="0.00" min="0" readonly></td>
-            <td colspan="2"><input tabindex="-1" step="any" type="number" id="philhealth" value="0.00" min="0" readonly></td>
-            <td colspan="2"><input tabindex="-1" step="any" type="number" id="hdmf" value="0.00" min="0" readonly></td>
+            <td rowspan="2"><input tabindex="-0" step="any" type="number" value="" required placeholder="LWOPs only" id="absences"></td>
+            <td rowspan="2"><input tabindex="-0" step="any" type="number" value="" required placeholder="Enter amount" id="btaxDeductions"></td>
+            <td rowspan="2"><input tabindex="-0" step="any" type="number" value="" required placeholder="Enter amount" id="ataxdeductions"></td>
+            <td rowspan="2"><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="totalLateHoursDeductions"></td>
+            <td colspan="2"><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="sss"></td>
+            <td colspan="2"><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="philhealth"></td>
+            <td colspan="2"><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="hdmf"></td>
           </tr>
           <tr>
             <td><label for="sss.checkbox">exclude</label></td>
@@ -471,16 +480,16 @@
           </tr>
         </thead>
         <tbody>
-          <td><input tabindex="-1" step="any" type="number" id="grossincome" value="0.00" min="0" readonly></td>
-          <td><input tabindex="-1" step="any" type="number" id="nettaxableincome" value="0.00" min="0" readonly></td>
-          <td><input tabindex="-1" step="any" type="number" id="tax" value="0.00" min="0" readonly></td>
-          <td><input tabindex="-1" step="any" type="number" id="netincome" value="0.00" min="0" readonly></td>
+          <td><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="grossincome"></td>
+          <td><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="nettaxableincome"></td>
+          <td><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="tax"></td>
+          <td><input tabindex="-1" step="any" type="number" value="0.00" class="readonly" disabled readonly id="netincome"></td>
           </tr>
         </tbody>
       </table>
     </section>
     <hr>
-    <button class="button0" type="submit" onclick="callAll()">Calculate</button>
+    <button class="button0" type="submit" onclick="programStart()">Calculate</button>
     </section>
   </form>
   <script src="data.js"></script>

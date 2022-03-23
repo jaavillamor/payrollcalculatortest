@@ -1,4 +1,19 @@
-// Salary Details | Timesheet (Regular Days) | Timesheet (Holidays and Rest Days) //
+// Salary Details | Timesheet (Regular Days) | Timesheet (Holidays and Rest Days) | Salary Deductions } Net Salary //
+
+function programStart() {
+    var monthly = document.getElementById('monthly').value;
+    var allowances = document.getElementById('allowances').value;
+    var workingdays = document.getElementById('workingdays').value;
+    var leaveWOPay = document.getElementById('absences').value;
+    var btaxDeductions = document.getElementById('btaxDeductions').value;
+    var ataxdeductions = document.getElementById('ataxdeductions').value;
+    if (monthly == '' || allowances == '' || workingdays == '' || leaveWOPay == '' || btaxDeductions == '' || ataxdeductions == '') {
+        return false;
+    } else {
+        callAll();
+    }
+
+}
 
 function callAll() {
 
